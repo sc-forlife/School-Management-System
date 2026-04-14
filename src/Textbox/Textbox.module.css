@@ -1,0 +1,13 @@
+.textbox {
+  width: 230px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1.5px;
+  border-radius: 5px;
+  box-shadow: inset 0px 4px 4px hsla(0, 0%, 0%, 0.15);
+  margin-left: 2px;
+}
+
+.select {
+  font-size: 1rem;
+}

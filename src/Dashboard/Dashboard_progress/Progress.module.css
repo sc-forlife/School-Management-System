@@ -1,0 +1,50 @@
+.update_container {
+  margin: 14px 0;
+  padding: 18px 22px;
+  width: 70%;
+  border-radius: 18px;
+  background: var(--cardColor);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: 0.25s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  margin: auto;
+  margin-top: 30px;
+}
+
+.update_container:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+.update_header h5 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+}
+
+.update_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.update_list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 5px 0;
+  font-size: 14.5px;
+  line-height: 1.4rem;
+}
+
+.bullet {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}

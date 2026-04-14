@@ -1,0 +1,711 @@
+.main_dashboard_side_panel {
+  height: 99%;
+  width: 19%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: solid 1px black;
+}
+
+.Badge {
+  width: auto;
+  height: 70px;
+  margin-bottom: 15px;
+}
+
+/* circular profile image */
+.User {
+  width: 80px;
+  height: 80px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.User:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+/* overlay background */
+.previewOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.25s ease;
+}
+
+/* popup container */
+.previewContainer {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+/* full image inside popup */
+.fullImage {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* close button */
+.closeBtn {
+  position: absolute;
+  top: -35px;
+  right: -5px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s ease;
+}
+
+.closeBtn:hover {
+  color: #ff5555;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.profile_description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu_buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 9px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 90%;
+  height: 330px;
+}
+
+.button {
+  margin: 3px;
+  text-align: center;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  background-color: inherit;
+}
+
+.button:hover {
+  background-color: #00ffee;
+  transform: scale(1.05);
+}
+
+.inline_display {
+  display: flex;
+}
+
+/* Css for top Panel */
+
+.top_panel {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  z-index: 2;
+  height: 70px;
+  padding: 5px;
+  padding-left: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Css for Main_body */
+
+/* .Dashboard_main_body {
+  width: 100%;
+  height: 98%;
+  overflow-y: scroll;
+} */
+
+.Dashboard_mid_section {
+  display: flex;
+  flex-direction: column;
+  width: 62%;
+}
+
+/* Css for Parents online / Update request */
+.cards_container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Base card style */
+.card {
+  width: 220px;
+  height: 150px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card h5 {
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.card span {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Parents Online card */
+.parents_online {
+  background: linear-gradient(135deg, #3be35d, #28a745);
+}
+
+/* Updates Request card */
+.updates_request {
+  background: linear-gradient(135deg, #ff4d4d, #c10000);
+}
+
+/* Hover effects */
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: rotate(30deg);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.user_stats {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+/* Css for Task_card */
+
+.task_completed {
+  width: 200px;
+  height: 60px;
+  margin: 5px;
+  background: linear-gradient(
+    135deg,
+    #fef08a,
+    #fde047
+  ); /* soft gradient instead of flat yellow */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.task_completed2 {
+  width: 200px;
+  height: auto;
+  margin: 5px;
+  background: linear-gradient(
+    135deg,
+    #fef08a,
+    #fde047
+  ); /* soft gradient instead of flat yellow */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 10px;
+  font-weight: 500;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* subtle shine effect */
+.task_completed::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(25deg) translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.task_completed:hover::after {
+  transform: rotate(25deg) translateX(100%);
+}
+
+/* hover effects */
+.task_completed:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.task_list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 225px;
+  width: 225px;
+  margin-top: 20px;
+  margin-left: 60px;
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.task_list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* CSS for attendance_container */
+
+.invite_container {
+  width: 360px;
+  height: 220px;
+  background: linear-gradient(135deg, #1e1e2f, #2c2c45);
+  color: white;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+}
+
+.invite_container h4 {
+  margin-bottom: 8px;
+}
+
+.invite_subtext {
+  font-size: 0.85rem;
+  color: #bbb;
+  margin-bottom: 12px;
+}
+
+.invite_code_box {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.copy_btn {
+  background: #00ffee;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.copy_btn:hover {
+  background: #00c9b7;
+}
+
+.generate_btn {
+  margin-top: 10px;
+  background-color: #aa00ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.generate_btn:hover {
+  background-color: #7700c3;
+}
+
+.button_update_request {
+  background-color: black;
+  color: white;
+  font-size: 0.8rem;
+  text-align: center;
+  border-radius: 8px;
+  width: 80%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 3px hsla(0, 0%, 0%, 0.411);
+  border: none;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.button_update_request:hover {
+  background-color: #aa00ff;
+  color: white;
+  box-shadow: 3px 3px 3px hsla(0, 0%, 0%, 0.9);
+}
+
+/* CSS for textarea */
+.textarea {
+  width: 90%;
+  height: 150px;
+}
+
+.textarea_container {
+  margin-left: 20px;
+  margin-top: 40px;
+}
+
+/* CSS for managing button */
+
+.managing_button {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+
+/*Css for Managing button */
+
+.managing_button {
+  background-color: black;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+  width: 250px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 3px hsla(0, 0%, 0%, 0.411);
+  border: none;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.managing_button:hover {
+  background-color: #aa00ff;
+  color: white;
+  box-shadow: 3px 3px 3px hsla(0, 0%, 0%, 0.9);
+}
+
+.managing_button:active {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: solid 2px black;
+  box-shadow: 3px 3px 3px hsla(0, 0%, 0%, 0.9);
+}
+
+/* CSS for child_card */
+
+.Child_card_container {
+  width: 400px;
+  height: 250px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  border: solid 2px black;
+  border-radius: 20px;
+}
+
+.lower_container {
+  display: flex;
+}
+
+/* ---------- DASHBOARD MAIN BODY LAYOUT ---------- */
+.Dashboard_main_body {
+  width: 100%;
+  height: 490px;
+  overflow-y: auto;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #f7f8fa;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ---------- STATS SECTION ---------- */
+.stats_section {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.stat_card {
+  background: linear-gradient(135deg, #6e00ff, #9d00ff);
+  color: white;
+  width: 200px;
+  height: 140px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.stat_card h5 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+.stat_card span {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.stat_card:hover {
+  transform: translateY(-5px) scale(1.03);
+}
+
+/* ---------- BOTTOM SECTION ---------- */
+.bottom_section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* ---------- USER LIST ---------- */
+.user_list_section {
+  flex: 1;
+  min-width: 250px;
+  height: 245px;
+  background: linear-gradient(135deg, #1e1e2f, #2c2c45);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-height: 270px;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.user_list_section h4 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+/* ---------- USER LIST 2---------- */
+.user_list_section2 {
+  flex: 1;
+  min-width: 250px;
+  background: linear-gradient(135deg, #1e1e2f, #2c2c45);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  height: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.user_list_section2 h4 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.user_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.no_user_text {
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+/* ---------- INVITE CONTAINER ---------- */
+.invite_container {
+  flex: 1;
+  min-width: 300px;
+  background: linear-gradient(135deg, #1e1e2f, #2c2c45);
+  color: white;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+}
+
+.invite_container h4 {
+  margin-bottom: 8px;
+}
+
+.invite_subtext {
+  font-size: 0.85rem;
+  color: #bbb;
+  margin-bottom: 15px;
+}
+
+.invite_code_box {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.copy_btn {
+  background: #00ffee;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.copy_btn:hover {
+  background: #00c9b7;
+}
+
+.generate_btn {
+  background-color: #aa00ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.generate_btn:hover {
+  background-color: #7700c3;
+}
+
+/* --- Active Parents Section --- */
+.section_title {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.user_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+.empty_state {
+  text-align: center;
+  color: #ccc;
+  padding: 20px;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+/* --- Child Card Styling --- */
+.child_card {
+  width: 100%;
+  min-height: 160px;
+  border-radius: 18px;
+  color: #1e1e2f;
+  font-weight: 500;
+  padding: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.child_card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.child_card_content p {
+  margin: 5px 0;
+  color: #1e1e2f;
+  font-size: 0.9rem;
+}

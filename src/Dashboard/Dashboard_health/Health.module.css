@@ -1,0 +1,9 @@
+.update_container {
+  margin: 10px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-bottom: 1px;
+  width: 97%;
+  height: auto;
+  border-radius: 20px;
+}

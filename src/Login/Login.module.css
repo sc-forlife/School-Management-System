@@ -1,0 +1,54 @@
+.body_background {
+  background: url("/hugs_kids_04.jpg");
+  background-size: 730px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 95vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main_container {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 500px;
+  height: 230px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 130px;
+  border-radius: 20px;
+}
+
+.login_content {
+  width: 93%;
+  height: 80%;
+  background: linear-gradient(to right, #ffff, #ff009d);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20px 10px;
+}
+
+.welcome {
+  margin: 0px;
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  width: 99%;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.forget {
+  font-size: 0.7em;
+  margin-bottom: 0px;
+  text-decoration: underline;
+}
